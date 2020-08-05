@@ -16,17 +16,14 @@ class GithubSearchDatasource implements ISearchDatasource {
   Future<List<ResultModel>> searchText(String textSearch) async {
     var result = await dio.get(
         "https://api.github.com/search/users?q=${textSearch.trim().replaceAll(' ', '+')}");
-    if (result.statusCode == 200) {
-      var jsonList = result.data['items'] as List;
-      var list = jsonList
-          .map((item) => ResultModel(
-              nickname: item['login'],
-              image: item['avatar_url'],
-              url: item['url']))
-          .toList();
-      return list;
-    } else {
-      throw Exception();
-    }
+
+    var jsonList = result.data['items'] as List;
+    var list = jsonList
+        .map((item) => ResultModel(
+            nickname: item['login'],
+            image: item['avatar_url'],
+            url: item['url']))
+        .toList();
+    return list;
   }
 }
