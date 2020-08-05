@@ -25,7 +25,7 @@ main() {
     when(dio.get(any)).thenAnswer(
         (_) async => Response(data: jsonDecode(jsonResponse), statusCode: 200));
 
-    var usecase = Modular.get<SearchByText>();
+    var usecase = Modular.get<ISearchByText>();
     var result = await usecase("jacob");
     expect(result.isRight(), true);
     expect(result | null, isA<List<Result>>());

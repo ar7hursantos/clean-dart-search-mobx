@@ -2,18 +2,18 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../search/domain/entities/result.dart';
-import '../../../search/domain/repositories/search_repository.dart';
 import '../errors/errors.dart';
+import '../repositories/i_search_repository.dart';
 
 part 'search_by_text.g.dart';
 
-mixin SearchByText {
+mixin ISearchByText {
   Future<Either<Failure, List<Result>>> call(String textSearch);
 }
 
 @Injectable(singleton: false)
-class SearchByTextImpl implements SearchByText {
-  final SearchRepository repository;
+class SearchByTextImpl implements ISearchByText {
+  final ISearchRepository repository;
 
   SearchByTextImpl(this.repository);
 

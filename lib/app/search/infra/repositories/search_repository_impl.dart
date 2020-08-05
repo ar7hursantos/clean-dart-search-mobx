@@ -2,16 +2,16 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../search/domain/entities/result.dart';
-import '../../../search/domain/repositories/search_repository.dart';
-import '../../../search/infra/datasources/search_datasource.dart';
 import '../../../search/infra/models/result_model.dart';
 import '../../domain/errors/errors.dart';
+import '../../domain/repositories/i_search_repository.dart';
+import '../datasources/i_search_datasource.dart';
 
 part 'search_repository_impl.g.dart';
 
 @Injectable(singleton: false)
-class SearchRepositoryImpl implements SearchRepository {
-  final SearchDatasource datasource;
+class SearchRepositoryImpl implements ISearchRepository {
+  final ISearchDatasource datasource;
 
   SearchRepositoryImpl(this.datasource);
 

@@ -11,7 +11,7 @@ part 'search_store.g.dart';
 class SearchStore = _SearchStoreBase with _$SearchStore;
 
 abstract class _SearchStoreBase with Store {
-  final SearchByText searchByText;
+  final ISearchByText searchByText;
   CancelableOperation cancellableOperation;
 
   _SearchStoreBase(this.searchByText) {

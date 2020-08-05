@@ -1,12 +1,12 @@
 import 'package:clean_dart_github_search_mobx/app/search/domain/errors/errors.dart';
-import 'package:clean_dart_github_search_mobx/app/search/infra/datasources/search_datasource.dart';
+import 'package:clean_dart_github_search_mobx/app/search/infra/datasources/i_search_datasource.dart';
 import 'package:clean_dart_github_search_mobx/app/search/infra/models/result_model.dart';
 import 'package:clean_dart_github_search_mobx/app/search/infra/repositories/search_repository_impl.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
-class SearchDatasourceMock extends Mock implements SearchDatasource {}
+class SearchDatasourceMock extends Mock implements ISearchDatasource {}
 
 main() {
   final datasource = SearchDatasourceMock();
@@ -28,7 +28,7 @@ main() {
     expect(result.fold(id, id), isA<ErrorSearch>());
   });
   test(
-      'deve retornar um DatasourceResultNull caso o retorno do datasource seja nulo',
+      '''deve retornar um DatasourceResultNull caso o retorno do datasource seja nulo''',
       () async {
     when(datasource.searchText("jacob")).thenAnswer((_) async => null);
 

@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../../search/infra/datasources/search_datasource.dart';
 import '../../../search/infra/models/result_model.dart';
+import '../../infra/datasources/i_search_datasource.dart';
 
 part 'github_search_datasource.g.dart';
 
 @Injectable(singleton: false)
-class GithubSearchDatasource implements SearchDatasource {
+class GithubSearchDatasource implements ISearchDatasource {
   final Dio dio;
 
   GithubSearchDatasource(this.dio);
