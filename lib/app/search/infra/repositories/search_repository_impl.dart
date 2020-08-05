@@ -21,7 +21,7 @@ class SearchRepositoryImpl implements ISearchRepository {
 
     try {
       list = await datasource.searchText(searchText);
-    } on Failure catch (_) {
+    } on Exception catch (_) {
       return left(ErrorSearch());
     }
 
