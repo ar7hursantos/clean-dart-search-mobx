@@ -1,9 +1,9 @@
-import 'package:clean_dart_github_search_mobx/app/search/domain/entities/result.dart';
-import 'package:clean_dart_github_search_mobx/app/search/domain/errors/erros.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../search/domain/entities/result.dart';
+import '../domain/errors/errors.dart';
 import 'search_store.dart';
 import 'states/search_state.dart';
 

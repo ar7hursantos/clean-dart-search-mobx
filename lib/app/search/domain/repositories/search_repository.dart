@@ -1,6 +1,7 @@
-import 'package:clean_dart_github_search_mobx/app/search/domain/entities/result.dart';
-import 'package:clean_dart_github_search_mobx/app/search/domain/errors/erros.dart';
 import 'package:dartz/dartz.dart';
+
+import '../../../search/domain/entities/result.dart';
+import '../errors/errors.dart';
 
 abstract class SearchRepository {
   Future<Either<Failure, List<Result>>> getUsers(String searchText);

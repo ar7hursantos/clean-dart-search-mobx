@@ -1,8 +1,8 @@
 import 'package:async/async.dart';
-import 'package:clean_dart_github_search_mobx/app/search/domain/usecases/search_by_text.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 
+import '../../search/domain/usecases/search_by_text.dart';
 import 'states/search_state.dart';
 
 part 'search_store.g.dart';

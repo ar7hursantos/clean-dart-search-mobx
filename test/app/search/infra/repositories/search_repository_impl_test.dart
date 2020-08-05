@@ -1,4 +1,4 @@
-import 'package:clean_dart_github_search_mobx/app/search/domain/errors/erros.dart';
+import 'package:clean_dart_github_search_mobx/app/search/domain/errors/errors.dart';
 import 'package:clean_dart_github_search_mobx/app/search/infra/datasources/search_datasource.dart';
 import 'package:clean_dart_github_search_mobx/app/search/infra/models/result_model.dart';
 import 'package:clean_dart_github_search_mobx/app/search/infra/repositories/search_repository_impl.dart';

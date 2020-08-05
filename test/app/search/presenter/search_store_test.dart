@@ -1,14 +1,13 @@
 import 'dart:convert';
 
-import 'package:async/async.dart';
 import 'package:clean_dart_github_search_mobx/app/app_module.dart';
 import 'package:clean_dart_github_search_mobx/app/search/presenter/search_store.dart';
+import 'package:clean_dart_github_search_mobx/app/search/presenter/states/search_state.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_modular/flutter_modular_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:clean_dart_github_search_mobx/app/search/presenter/states/search_state.dart';
 
 class DioMock extends Mock implements Dio {}
 

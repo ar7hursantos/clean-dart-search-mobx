@@ -1,7 +1,9 @@
-import 'package:clean_dart_github_search_mobx/app/search/infra/datasources/search_datasource.dart';
-import 'package:clean_dart_github_search_mobx/app/search/infra/models/result_model.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
+import '../../../search/infra/datasources/search_datasource.dart';
+import '../../../search/infra/models/result_model.dart';
+
 part 'github_search_datasource.g.dart';
 
 @Injectable(singleton: false)
@@ -12,7 +14,7 @@ class GithubSearchDatasource implements SearchDatasource {
 
   @override
   Future<List<ResultModel>> searchText(String textSearch) async {
-    var result = await this.dio.get(
+    var result = await dio.get(
         "https://api.github.com/search/users?q=${textSearch.trim().replaceAll(' ', '+')}");
     if (result.statusCode == 200) {
       var jsonList = result.data['items'] as List;
