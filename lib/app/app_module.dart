@@ -12,11 +12,16 @@ import 'search/presenter/search_store.dart';
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
-        $SearchByTextImpl,
-        $SearchRepositoryImpl,
-        $GithubSearchDatasource,
         Bind((i) => Dio()),
-        $SearchStore,
+        Bind((i) => SearchByTextImpl(i())),
+        Bind((i) => SearchRepositoryImpl(i())),
+        Bind((i) => GithubSearchDatasource(i())),
+        Bind((i) => SearchStore(i())),
+
+        // $SearchByTextImpl,
+        // $SearchRepositoryImpl,
+        // $GithubSearchDatasource,
+        // $SearchStore,
       ];
 
   @override
